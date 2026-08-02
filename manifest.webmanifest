@@ -1,0 +1,13 @@
+{
+  "name": "the dreamer — make any model sharper overnight, without retraining",
+  "short_name": "the dreamer",
+  "description": "A dream-cycle bolt-on: give any local model a sleep/wake cycle that reorganizes the day's memory into typed connections — so it answers better each morning, weights untouched. Memory made to act like learning.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0b0a1c",
+  "theme_color": "#0b0a1c",
+  "icons": [
+    { "src": "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%230b0a1c'/%3E%3Ctext x='50' y='72' font-size='58' text-anchor='middle'%3E%F0%9F%8C%99%3C/text%3E%3C/svg%3E", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ]
+}
