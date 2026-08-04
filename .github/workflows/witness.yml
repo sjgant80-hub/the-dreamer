@@ -1,0 +1,15 @@
+name: witness
+on: [push, pull_request]
+jobs:
+  gate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: '20' }
+      - name: assertion suite (must be green)
+        run: node test.mjs
+      - name: witness mutation gate (must be clean)
+        run: |
+          git clone --depth 1 https://github.com/sjgant80-hub/witness.git .witness
+          node .witness/witness.mjs mutate dreamer.mjs --cap 200 --baseline witness.baseline.json --test node test.mjs

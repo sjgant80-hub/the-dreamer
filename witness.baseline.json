@@ -1,0 +1,22 @@
+[
+  {
+    "mutation": "< → <=",
+    "snippet": "if (report.merged < 0) report.merged = 0;",
+    "reason": "EQUIVALENT — clamp at exactly 0. `report.merged<=0` differs from `<0` only when merged===0, where it sets report.merged=0 (already 0): a no-op. For merged<0 both set 0; for merged>0 neither fires. No observable change."
+  },
+  {
+    "mutation": "&& → ||",
+    "snippet": "const subs = new Set([...store.facts.values()].filter(f => f.p === p && !f.superseded).map",
+    "reason": "EQUIVALENT — `subs` only feeds `closure(store,s,p)`, which follows only NON-superseded p-edges from s. The extra subjects the `||` admits (those lacking a non-superseded p-edge) yield an empty closure, so the materialize loop creates nothing. report.transitive and the resulting store are identical."
+  },
+  {
+    "mutation": "&& → ||",
+    "snippet": "const classes = new Set([...store.facts.values()].filter(f => f.p === 'isa' && !f.supersed",
+    "reason": "EQUIVALENT — `classes` only drives generalization via `instancesOf(C)` = subjects whose isa-closure contains C. Every isa-closure member is an isa-object, so the extra classes the `||` admits (objects of non-isa or superseded facts, never isa-objects) have zero instances and emit no rule. Identical store/report."
+  },
+  {
+    "mutation": "&& → ||",
+    "snippet": "const has = (s, p, o) => { const f = store.facts.get(key(s, p, o)); return f && !f.superse",
+    "reason": "EQUIVALENT — the `has` arrow function is dead code: it is never called anywhere (grep confirms no `has(` call site; every `.has(` in the file is a Map/Set/Set-constant method). Any mutation to its body is unobservable."
+  }
+]
