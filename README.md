@@ -7,7 +7,7 @@ episodic memory — it never gets sharper, because nothing reorganizes. `the dre
 that: give any local model a **sleep/wake cycle**. Overnight it **replays** the day, **merges** duplicates, wires
 **typed connections**, **generalizes** across instances, **resolves contradictions by evidence**, and **prunes**
 noise. Next morning, retrieval walks the reorganized graph — so the model answers questions it *could not answer
-the night before*. **The weights never change. The knowledge structure does.** Gary's method, generalized.
+the night before*. **The weights never change. The knowledge structure does.** Gary Floyd's method (Nexus), generalized.
 
 ## The claim, measured (this is the wedge)
 
